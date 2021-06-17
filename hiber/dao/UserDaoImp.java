@@ -15,16 +15,6 @@ public class UserDaoImp implements UserDao {
    @Autowired
    private SessionFactory sessionFactory;
 
-
-   public void add(Car car) {
-      sessionFactory.getCurrentSession().save(car);
-
-   }
-   public List<Car> listCar() {
-      TypedQuery<Car> query=sessionFactory.getCurrentSession().createQuery("from car");
-      return query.getResultList();
-   }
-
    public void add(User user) {
       sessionFactory.getCurrentSession().save(user);
    }
