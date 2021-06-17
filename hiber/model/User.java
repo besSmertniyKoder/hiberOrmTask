@@ -59,15 +59,5 @@ public class User {
       this.email = email;
    }
 
-   public Car getCar() {
-      return car;
-   }
-
-   public void setCar(Car car) {
-      this.car = car;
-   }
-   @OneToOne(optional = false, cascade = CascadeType.ALL)
-   @JoinColumn(name = "Car")
-   private Car car;
 
 }

@@ -13,6 +13,8 @@ import javax.persistence.Table;
 public class Car {
 
 
+    @Id
+    private Long id;
 
     public int getSeries() {
         return series;
@@ -43,4 +45,11 @@ public class Car {
         this.user = user;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
+    }
 }
