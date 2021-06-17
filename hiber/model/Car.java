@@ -1,20 +1,29 @@
 package hiber.model;
 
-import jdk.nashorn.internal.objects.annotations.Getter;
-import jdk.nashorn.internal.objects.annotations.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "car")
 public class Car {
 
+    @Column(name = "model")
+    private String model;
+
+    @Column(name = "series")
+    private int series;
+
+    public Car(String model,int series) {
+        this.model = model;
+        this.series = series;
+    }
 
     @Id
     private Long id;
+
+    public Car() {
+
+    }
 
     public int getSeries() {
         return series;
@@ -32,8 +41,7 @@ public class Car {
         this.model = model;
     }
 
-    private String model;
-    private int series;
+
     @OneToOne(optional = false, mappedBy = "car")
     private User user;
 
