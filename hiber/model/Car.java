@@ -19,7 +19,9 @@ public class Car {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
 
     public Car() {
 
@@ -42,7 +44,7 @@ public class Car {
     }
 
 
-    @OneToOne(optional = false, mappedBy = "car")
+    @OneToOne(optional = false)
     private User user;
 
     public User getUser() {
