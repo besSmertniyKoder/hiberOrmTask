@@ -18,7 +18,7 @@ public class MainApp {
 //      Car carq = new Car("car",93390083,new User("name","last_name","email@mail.com"));
 //      userService.add(carq);
 //
-      userService.add(new User("User1", "Lastname1", "user1@mail.ru"),new Car("v",212));
+      userService.add(new User("User1", "Lastname1", "user1@mail.ru",new Car("volga",212)));
       userService.add(new User("User2", "Lastname2", "user2@mail.ru"));
       userService.add(new User("User3", "Lastname3", "user3@mail.ru"));
       userService.add(new User("User4", "Lastname4", "user4@mail.ru"));

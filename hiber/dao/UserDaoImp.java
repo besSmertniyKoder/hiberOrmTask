@@ -15,7 +15,7 @@ public class UserDaoImp implements UserDao {
 
    @Autowired
    private SessionFactory sessionFactory;
-
+@Transactional
    public void add(User user) {
       sessionFactory.getCurrentSession().save(user);
    }
