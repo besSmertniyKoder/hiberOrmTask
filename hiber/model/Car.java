@@ -7,10 +7,10 @@ import javax.persistence.*;
 @Table(name = "car")
 public class Car {
 
-    @Column(name = "model")
+    @Column
     private String model;
 
-    @Column(name = "series")
+    @Column
     private int series;
 
     public Car(String model,int series) {
@@ -44,7 +44,7 @@ public class Car {
     }
 
 
-    @OneToOne(optional = false)
+    @OneToOne(optional = false,cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private User user;
 
     public User getUser() {
