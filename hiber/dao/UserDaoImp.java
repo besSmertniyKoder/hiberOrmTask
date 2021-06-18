@@ -16,13 +16,13 @@ public class UserDaoImp implements UserDao {
    @Autowired
    private SessionFactory sessionFactory;
 
-//   public void add(User user) {
-//      sessionFactory.getCurrentSession().save(user);
-//   }
-   @Override
-   public void add(Car car){
-      sessionFactory.getCurrentSession().save(car);
+   public void add(User user) {
+      sessionFactory.getCurrentSession().save(user);
    }
+//   @Override
+//   public void add(Car car){
+//      sessionFactory.getCurrentSession().save(car);
+//   }
 
    @Override
    @SuppressWarnings("unchecked")

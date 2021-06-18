@@ -16,15 +16,15 @@ public class UserServiceImp implements UserService {
    private UserDao userDao;
 
 
-//   @Override
-//   public void add(User user) {
-//      userDao.add(user);
-//   }
-
    @Override
-   public void add(Car car) {
-      userDao.add(car);
+   public void add(User user) {
+      userDao.add(user);
    }
+
+//   @Override
+//   public void add(Car car) {
+//      userDao.add(car);
+//   }
 
 
    @Transactional(readOnly = true)
