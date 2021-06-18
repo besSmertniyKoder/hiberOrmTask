@@ -16,12 +16,12 @@ public class UserDaoImp implements UserDao {
    @Autowired
    private SessionFactory sessionFactory;
 
-   public void add(User user) {
-      sessionFactory.getCurrentSession().save(user);
-   }
+//   public void add(User user) {
+//      sessionFactory.getCurrentSession().save(user);
+//   }
    @Override
-   public void addCar(Car car){
-      sessionFactory.getCurrentSession().save(car);//я не смог  полиморфизм и ооп похоже
+   public void add(Car car){
+      sessionFactory.getCurrentSession().save(car);
    }
 
    @Override

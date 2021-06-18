@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-
+@Transactional
 @Service
 public class UserServiceImp implements UserService {
 
@@ -16,14 +16,14 @@ public class UserServiceImp implements UserService {
    private UserDao userDao;
 
 
-   @Override
-   public void add(User user) {
-      userDao.add(user);
-   }
+//   @Override
+//   public void add(User user) {
+//      userDao.add(user);
+//   }
 
    @Override
-   public void addCar(Car car) {
-      userDao.addCar(car);
+   public void add(Car car) {
+      userDao.add(car);
    }
 
 

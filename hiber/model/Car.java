@@ -7,13 +7,14 @@ import javax.persistence.*;
 @Table(name = "car")
 public class Car {
 
-    @Column
+    @Column(name = "model",length = 40,columnDefinition = "char default 50")
     private String model;
 
-    @Column
+    @Column(name = "series",length = 50,columnDefinition = "int default 100")
     private int series;
 
-    public Car(String model,int series) {
+    public Car(String model,int series,User user) {
+        this.user = user;
         this.model = model;
         this.series = series;
     }
@@ -44,7 +45,7 @@ public class Car {
     }
 
 
-    @OneToOne(optional = false,cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToOne(optional = false,cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private User user;
 
     public User getUser() {
