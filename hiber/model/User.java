@@ -1,10 +1,13 @@
 package hiber.model;
 
 
+import org.hibernate.annotations.DynamicUpdate;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
+@DynamicUpdate
 public class User {
 
     @Id
