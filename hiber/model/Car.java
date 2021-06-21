@@ -1,10 +1,12 @@
 package hiber.model;
 
 
+import org.hibernate.annotations.DynamicInsert;
+
 import javax.persistence.*;
 
 @Entity
-@Table(name = "car")
+@Table(name = "cars")
 public class Car {
 
 
@@ -12,10 +14,11 @@ public class Car {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "model")
+    @Column
     private String model;
 
-    @Column(name = "series")
+
+    @Column
     private int series;
 
     public Car(String model, int series) {

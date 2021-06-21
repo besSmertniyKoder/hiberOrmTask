@@ -8,14 +8,14 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-@Transactional
+
 @Service
 public class UserServiceImp implements UserService {
 
    @Autowired
    private UserDao userDao;
 
-
+@Transactional
    @Override
    public void add(User user) {
       userDao.add(user);
