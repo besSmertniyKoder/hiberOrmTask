@@ -10,31 +10,38 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class MainApp {
-   public static void main(String[] args) throws SQLException {
-      AnnotationConfigApplicationContext context = 
-            new AnnotationConfigApplicationContext(AppConfig.class);
+    public static void main(String[] args) throws SQLException {
+        AnnotationConfigApplicationContext context =
+                new AnnotationConfigApplicationContext(AppConfig.class);
 
-      UserService userService = context.getBean(UserService.class);
-//      Car carq = new Car("car",93390083,new User("name","last_name","email@mail.com"));
-//      userService.add(carq);
-//
-      userService.add(new User("User1", "Lastname1", "user1@mail.ru",new Car("volga",212)));
-      userService.add(new User("User2", "Lastname2", "user2@mail.ru"));
-      userService.add(new User("User3", "Lastname3", "user3@mail.ru"));
-      userService.add(new User("User4", "Lastname4", "user4@mail.ru"));
+        UserService userService = context.getBean(UserService.class);
 
-      List<User> users = userService.listUsers();
-      for (User user : users) {
-         System.out.println("Id = "+user.getId());
-         System.out.println("First Name = "+user.getFirstName());
-         System.out.println("Last Name = "+user.getLastName());
-         System.out.println("Email = "+user.getEmail());
-         System.out.println();
-      }
 
-      context.close();
-   }
+        userService.add(new User("name1", "lastName1", "email1", new Car("car1", 11011)));
+        userService.add(new User("name2", "lastName2", "email2", new Car("car2", 11111)));
+        userService.add(new User("name3", "lastName3", "email3", new Car("car3", 11211)));
+        userService.add(new User("name4", "lastName4", "email4", new Car("car4", 11311)));
+
+        List<User> users = userService.listUsers();
+        for (User user : users) {
+            System.out.println("Id = " + user.getId());
+            System.out.println("First Name = " + user.getFirstName());
+            System.out.println("Last Name = " + user.getLastName());
+            System.out.println("Email = " + user.getEmail());
+            System.out.println();
+        }
+
+        context.close();
+    }
 }
-//госпаде сука что это такое
-//хелп ми бляьб
+
+
+
+
+
+
+
+
+
+//kak?
 
