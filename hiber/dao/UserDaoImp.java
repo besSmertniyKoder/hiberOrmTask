@@ -28,7 +28,7 @@ public class UserDaoImp implements UserDao {
         TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery("from User");
         return query.getResultList();
     }
-
+// если честно понятия не имею как,но оно все еще работает и я бооюсь это трогать
     @Override
     public User getUserByCar(String carModel, int carSeries) {
         TypedQuery<Car> query = sessionFactory.getCurrentSession()
