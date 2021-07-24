@@ -1,8 +1,4 @@
 package hiber.model;
-
-
-import org.hibernate.annotations.DynamicUpdate;
-
 import javax.persistence.*;
 
 @Entity
@@ -11,7 +7,6 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Long id;
 
     @Column(name = "name")
@@ -31,13 +26,6 @@ public class User {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-    }
-
-    public User(String firstName, String lastName, String email, Car userCar) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.userCar = userCar;
     }
 
     public Long getId() {
@@ -72,16 +60,5 @@ public class User {
         this.email = email;
     }
 
-    public Car getUserCar() {
-        return userCar;
-    }
 
-    public void setUserCar(Car userCar) {
-        this.userCar = userCar;
-    }
-
-    @Override
-    public String toString() {
-        return firstName + lastName + email + userCar;
-    }
 }
